@@ -7,13 +7,13 @@ SUBMITNAME=project.zip
 all:$(BIN)
 
 main:$(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o main
+	$(CC) $(CFLAGS) $(OBJS) -o $(BIN)
 
-%o: %.c
+%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(RM) -r main *.o *.dSYM $(SUBMITNAME)
+	$(RM) -r $(BIN) *.o *.dSYM $(SUBMITNAME)
 
 submit:
 	$(RM) $(SUBMITNAME)
